@@ -4,3 +4,7 @@ export type Post = {
   title: string;
   body: string;
 };
+
+export type PostsSchema = {
+  currentPage: number;
+};

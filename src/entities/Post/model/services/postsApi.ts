@@ -5,7 +5,7 @@ import { Post } from '@entities/Post';
 const POSTS_PAGE_LIMIT = 10;
 
 export const postsApi = createApi({
-  reducerPath: 'posts',
+  reducerPath: 'postsApi',
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_BASE_URL }),
   endpoints: (builder) => ({
     getPostsPage: builder.query<Post[], number>({

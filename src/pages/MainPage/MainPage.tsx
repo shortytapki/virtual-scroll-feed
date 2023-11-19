@@ -1,14 +1,22 @@
-import { Post, PostPreview, useGetPostsPageQuery } from '@entities/Post';
+import {
+  Post,
+  PostPreview,
+  postsActions,
+  postsSelectors,
+  useGetPostsPageQuery,
+} from '@entities/Post';
 import { Loader, VirtualScroller } from '@shared/ui';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const MainPage = () => {
-  const [page, setPage] = useState(1);
-  const { data: posts, isSuccess, isError } = useGetPostsPageQuery(page);
+  const currentPage = useSelector(postsSelectors.selectCurrentPage);
+  const dispatch = useDispatch();
+  const { data: posts, isSuccess, isError } = useGetPostsPageQuery(currentPage);
 
   const loadNewPosts = useCallback(() => {
-    setPage(page + 1);
-  }, [page]);
+    dispatch(postsActions.setPage(currentPage + 1));
+  }, [currentPage, dispatch]);
 
   return (
     <>

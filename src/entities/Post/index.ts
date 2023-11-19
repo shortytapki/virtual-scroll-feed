@@ -9,3 +9,9 @@ export {
 export { PostPreview } from './ui/PostPreview';
 
 export { PostArticle } from './ui/PostArticle';
+
+export {
+  postsActions,
+  postsReducer,
+  postsSelectors,
+} from './model/slice/postsSlice';
