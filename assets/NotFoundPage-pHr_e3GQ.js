@@ -1,0 +1,1 @@
+import{j as e,A as s,R as t}from"./index-zy8ixyQ_.js";function n(){return e.jsxs(e.Fragment,{children:[e.jsx("h1",{className:"text-[4rem]",children:"404"}),e.jsx("p",{className:"text-4xl mb-4",children:"Запрашиваемая страница не найдена"}),e.jsx(s,{to:t.main,children:"На главную"})]})}export{n as default};
